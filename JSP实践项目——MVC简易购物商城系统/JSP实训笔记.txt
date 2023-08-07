@@ -1,0 +1,20 @@
+需要在Entity包中创建的类Goods，User，ShopCart
+需要在Dao包中创建的类有GoodsDao，UserDao，ShopCartDao
+需要在DaoImp包中创建的类有GoodsDaoImp，UserDaoImp，ShopCartDaoImp
+Goods类中的列：gname，gprice，gnumber
+User类中的列：uname。password
+ShopCart类中的列：cart_id，gname，gprice，cnum，cprice
+6.19日开发进程总结
+截止到6月19日16:30，本项目已经实现了链接数据库和网页展示的基本功能，但是没法做到在网页中对数据库中的相关数据进行操作的功能，同时页面较为粗糙简单，后续开发中应该进行优化
+在Dologin.jsp文件中，有一些功能实现的不是很完好，没有做到可以准确判断是否是用户登录，网页的搭建目前也是在测试中，属于曲线脱困，后续开发中还需要对该问题进行优化，尽量减少相关文件数量
+除此之外，数据库的问题还是亟待解决，没有做到将shopcart表中的gname，gprice字段和goods表中的gnaame，gprice字段进行链接，这个问题应该是数据库的创建就存在的问题
+Goods表sql
+select * from `Goods`
+
+User表sql
+select  password  from `User` where uname='" + uname + "'
+
+ShopCart表sql
+select gname, gprice, cnum, gprice * ShopCart.cnum 'cprice' from ShopCart where uname='" + uname + "';
+insert into `ShopCart` values ('朱秦乐','三星  500GB SSD固态硬盘 SATA3.0接口',440,1);
+delete from shopcart where gname='三星  500GB SSD固态硬盘 SATA3.0接口';

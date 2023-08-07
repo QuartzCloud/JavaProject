@@ -1,0 +1,2 @@
+MVC_Simple supermarket shopping system是项目包
+console_12是相关的数据库配置
